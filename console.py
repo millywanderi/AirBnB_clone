@@ -43,7 +43,7 @@ class HBNBCommand(cmd.Cmd):
         "City",
         "Place",
         "Amenity",
-        "Review",
+        "Review"
     }
 
     def emptyline(self):
@@ -139,7 +139,7 @@ class HBNBCommand(cmd.Cmd):
         else:
             obj_1 = []
             for obj in storage.all().values():
-                if len(arg_1) > 0 and arg1[0] == obj.__class__.__name__:
+                if len(arg_1) > 0 and arg_1[0] == obj.__class__.__name__:
                     obj_1.append(obj.__str__())
                 elif len(arg_1) == 0:
                     obj_1.append(obj.__str__())
@@ -167,7 +167,7 @@ class HBNBCommand(cmd.Cmd):
             return False
         # False indicates do_all encountered an error and did not
         # execute succesfully
-        if arg1_1[0] not in HBNBCommand.__classes:
+        if arg_1[0] not in HBNBCommand.__classes:
             print("** class doesn't exist **")
             return False
         if len(arg_1) == 1:
