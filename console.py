@@ -20,7 +20,7 @@ def parse(arg):
     if curlies is None:
         if sq_brackets is None:
             for token in split(arg):
-                return token.strip(",")
+                return [token.strip(",") for token in split(arg)]
         else:
             b4_brackets = split(arg[:sq_brackets.span()[0]])
             b4_brackets1 = [token.strip(",") for token in b4_brackets]
