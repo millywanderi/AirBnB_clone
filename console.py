@@ -31,6 +31,7 @@ def parse(arg):
         b4_brackets1 = [token.strip(",") for token in b4_brackets]
         b4_brackets1.append(curlies.group())
         return b4_brackets1
+    return []
 
 
 class HBNBCommand(cmd.Cmd):
