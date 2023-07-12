@@ -36,7 +36,7 @@ class FileStorage:
     def reload(self):
         "Deserializes the json str representation to python objects"""
         try:
-            with ope(FileStorage.__file_path) as _file:
+            with open(FileStorage.__file_path) as _file:
                 o_dict = json.load(_file)
                 for obj in o_dict.values():
                     class_name = obj["__class__"]

@@ -2,7 +2,7 @@
 """Module Documentation for our Airbnb Console"""
 import cmd
 import re
-import shlex import split
+from shlex import split
 from models import storage
 from models.base_model import BaseModel
 from models.user import User
@@ -43,7 +43,7 @@ class HBNBCommand(cmd.Cmd):
         "City",
         "Place",
         "Amenity",
-        "Review"
+        "Review",
     }
 
     def emptyline(self):
@@ -110,7 +110,7 @@ class HBNBCommand(cmd.Cmd):
         elif "{}.{}".format(arg_1[0], arg_1[1]) not in obj_dict:
             print("** no instance found **")
         else:
-            print(obj_dict["{}.{}".format(arg_1[0], arg1[1])])
+            print(obj_dict["{}.{}".format(arg_1[0], arg_1[1])])
 
     def do_destroy(self, arg):
         """Deletes an instance based on the class name and instance id"""
@@ -204,5 +204,5 @@ class HBNBCommand(cmd.Cmd):
         storage.save()
 
 
-if __name__ = "__main__":
-    HBNBCommand().cmdloop()i
+if __name__ == "__main__":
+    HBNBCommand().cmdloop()
