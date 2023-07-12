@@ -12,8 +12,8 @@ class BaseModel:
         """Initializes the Base Model"""
         tformat = "%Y-%m-%dT%H:%M:%S.%f"
         self.id = str(uuid4())
-        self.created_at = datetime.today()
-        self.updated_at = datetime.today()
+        self.created_at = datetime.now()
+        self.updated_at = datetime.now()
 
         if len(kwargs) != 0:
             for m, n in kwargs.items():
@@ -26,7 +26,7 @@ class BaseModel:
 
     def save(self):
         """Updates update_at with the current datetime"""
-        self.updated_at = datetime.today()
+        self.updated_at = datetime.now()
         models.storage.save()
 
     def to_dict(self):

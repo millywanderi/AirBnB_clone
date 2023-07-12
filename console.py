@@ -2,7 +2,7 @@
 """Module Documentation for our Airbnb Console"""
 import cmd
 import re
-import shlex import split
+from shlex import split
 from models import storage
 from models.base_model import BaseModel
 from models.user import User
@@ -20,7 +20,7 @@ def parse(arg):
     if curlies is None:
         if sq_brackets is None:
             for token in split(arg):
-                return token.strip(",")
+                return [token.strip(",") for token in split(arg)]
         else:
             b4_brackets = split(arg[:sq_brackets.span()[0]])
             b4_brackets1 = [token.strip(",") for token in b4_brackets]
@@ -31,6 +31,7 @@ def parse(arg):
         b4_brackets1 = [token.strip(",") for token in b4_brackets]
         b4_brackets1.append(curlies.group())
         return b4_brackets1
+    return []
 
 
 class HBNBCommand(cmd.Cmd):
@@ -110,7 +111,7 @@ class HBNBCommand(cmd.Cmd):
         elif "{}.{}".format(arg_1[0], arg_1[1]) not in obj_dict:
             print("** no instance found **")
         else:
-            print(obj_dict["{}.{}".format(arg_1[0], arg1[1])])
+            print(obj_dict["{}.{}".format(arg_1[0], arg_1[1])])
 
     def do_destroy(self, arg):
         """Deletes an instance based on the class name and instance id"""
@@ -139,7 +140,7 @@ class HBNBCommand(cmd.Cmd):
         else:
             obj_1 = []
             for obj in storage.all().values():
-                if len(arg_1) > 0 and arg1[0] == obj.__class__.__name__:
+                if len(arg_1) > 0 and arg_1[0] == obj.__class__.__name__:
                     obj_1.append(obj.__str__())
                 elif len(arg_1) == 0:
                     obj_1.append(obj.__str__())
@@ -167,7 +168,7 @@ class HBNBCommand(cmd.Cmd):
             return False
         # False indicates do_all encountered an error and did not
         # execute succesfully
-        if arg1_1[0] not in HBNBCommand.__classes:
+        if arg_1[0] not in HBNBCommand.__classes:
             print("** class doesn't exist **")
             return False
         if len(arg_1) == 1:
@@ -204,5 +205,5 @@ class HBNBCommand(cmd.Cmd):
         storage.save()
 
 
-if __name__ = "__main__":
-    HBNBCommand().cmdloop()i
+if __name__ == "__main__":
+    HBNBCommand().cmdloop()
