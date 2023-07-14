@@ -96,9 +96,8 @@ class HBNBCommand(cmd.Cmd):
             storage.save()
 
     def do_show(self, arg):
-        """
-        Prints the str representation of an instance based on the class
-        name and id
+        """Usage: show <class> <id> or <class>.show(<id>)
+        Display the string representation of a class instance of a given id.
         """
         arg_1 = parse(arg)
         obj_dict = storage.all()
