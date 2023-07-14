@@ -52,7 +52,7 @@ class TestFileStorage_methods(unittest.TestCase):
         # it allows test to proceed without interruption even if renamimg
         # fails
 
-    @clasmethod
+    @classmethod
     def tearDown(self):
         try:
             os.remove("file.json")
@@ -82,12 +82,12 @@ class TestFileStorage_methods(unittest.TestCase):
         models.storage.new(Bm)
         models.storage.new(Us)
         models.storage.new(St)
-        mmodels.storage.new(Pl)
+        models.storage.new(Pl)
         models.storage.new(Cy)
         models.storage.new(Am)
         models.storage.new(Rv)
         self.assertIn("BaseModel." + Bm.id, models.storage.all().keys())
-        self.assertIn(Bm, models.storage.all().value())
+        self.assertIn(Bm, models.storage.all().values())
         self.assertIn("User." + Us.id, models.storage.all().keys())
         self.assertIn(Us, models.storage.all().values())
         self.assertIn("State." + St.id, models.storage.all().keys())
@@ -118,7 +118,7 @@ class TestFileStorage_methods(unittest.TestCase):
         Cy = City()
         Am = Amenity()
         Rv = Review()
-        models.storage.new(BM)
+        models.storage.new(Bm)
         models.storage.new(Us)
         models.storage.new(St)
         models.storage.new(Pl)

@@ -45,7 +45,7 @@ class TestPlace_instantiation(unittest.TestCase):
 
     def test_description_ispublic_cls_attr(self):
         pl = Place()
-        self.assertEqual(str, type(Place.description))
+        self.assertEqual(str, type(Place().description))
         self.assertIn("description", dir(pl))
         self.assertNotIn("description", pl.__dict__)
 
@@ -68,7 +68,7 @@ class TestPlace_instantiation(unittest.TestCase):
         self.assertNotIn("max_guest", pl.__dict__)
 
     def test_price_by_night_ispublic_clsattr(self):
-        p = Place()
+        pl = Place()
         self.assertEqual(int, type(Place.price_by_night))
         self.assertIn("price_by_night", dir(pl))
         self.assertNotIn("price_by_night", pl.__dict__)
@@ -96,7 +96,7 @@ class TestPlace_instantiation(unittest.TestCase):
         pll = Place()
         self.assertNotEqual(pl.id, pll.id)
 
-    def test_2places_different_created-at(self):
+    def test_2places_different_created_at(self):
         pl = Place()
         sleep(0.08)
         pll = Place()
@@ -173,7 +173,7 @@ class TestPlace_Save(unittest.TestCase):
         self.assertLess(first_updated_at, second_updated_at)
         sleep(0.08)
         pl.save()
-        self.assertLess(second_updated-at, pl.updated_at)
+        self.assertLess(second_updated_at, pl.updated_at)
 
     def test_save_with_args(self):
         pl = Place()
@@ -199,7 +199,7 @@ class TestPlace_to_dict(unittest.TestCase):
         self.assertIn("id", pl.to_dict())
         self.assertIn("created_at", pl.to_dict())
         self.assertIn("updated_at", pl.to_dict())
-        selt.assertIn("__class__", pl.to_dict())
+        self.assertIn("__class__", pl.to_dict())
 
     def test_to_dict_contains_added_attr(self):
         pl = Place()
@@ -223,10 +223,10 @@ class TestPlace_to_dict(unittest.TestCase):
         t_dict = {
             'id': '456789',
             '__class__': 'Place',
-            'created_at': dt.isoformat().
+            'created_at': dt.isoformat(),
             'updated_at': dt.isoformat(),
         }
-        self.assetDictEqual(pl.to_dict(), t_dict)
+        self.assertDictEqual(pl.to_dict(), t_dict)
 
     def test_contrast_to_dict_and__dict__(self):
         pl = Place()

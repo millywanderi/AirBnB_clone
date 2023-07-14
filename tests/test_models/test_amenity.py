@@ -8,10 +8,10 @@ from time import sleep
 from models.amenity import Amenity
 
 
-class TestAmenity_instantiating(unittest.Testcase):
+class TestAmenity_instantiating(unittest.TestCase):
     """Unittest for testing the instantiation of the class Amenity"""
     def test_type_no_args_instantiation(self):
-        self.assertEqual(Amenity, type(Amenty()))
+        self.assertEqual(Amenity, type(Amenity()))
 
     def test_new_instance_stored_in_objects(self):
         self.assertIn(Amenity(), models.storage.all().values())
@@ -53,7 +53,7 @@ class TestAmenity_instantiating(unittest.Testcase):
         Am.id = "456789"
         Am.created_at = Am.updated_at = d_time
         Am_str = Am.__str__()
-        self.AssertIn("[Amenity] (456789)", Am_str)
+        self.assertIn("[Amenity] (456789)", Am_str)
         self.assertIn("'id': '456789'", Am_str)
         self.assertIn("'created_at': " + d_time_rep, Am_str)
         self.assertIn("'updated_at': " + d_time_rep, Am_str)
@@ -69,7 +69,7 @@ class TestAmenity_instantiating(unittest.Testcase):
         Am = Amenity(id="678", created_at=d_t_iso, updated_at=d_t_iso)
         self.assertEqual(Am.id, "678")
         self.assertEqual(Am.created_at, d_t)
-        self.assertEqual(An.created_at, d_t)
+        self.assertEqual(Am.created_at, d_t)
 
     def test_instantiating_withNone_kwargs(self):
         with self.assertRaises(TypeError):
@@ -116,7 +116,7 @@ class TestAmenity_save(unittest.TestCase):
 
     def test_save_witharguments(self):
         Am = Amenity()
-        with self.assetAssertRaises(TypeError):
+        with self.assertRaises(TypeError):
             Am.save(None)
 
     def test_save_updating_file(self):
@@ -160,7 +160,7 @@ class TestAmenity_to_dictionary(unittest.TestCase):
         Am.id = "456789"
         Am.created_at = Am.updated_at = d_t
         time_dict = {
-            'id': '456789'
+            'id': '456789',
             '__class__': 'Amenity',
             'created_at': d_t.isoformat(),
             'updated_at': d_t.isoformat(),
@@ -169,7 +169,7 @@ class TestAmenity_to_dictionary(unittest.TestCase):
 
     def test_contrat_to_dict_and__dict__(self):
         Am = Amenity()
-        self.AssertNotEqual(Am.to_dict(), Am.__dict__)
+        self.assertNotEqual(Am.to_dict(), Am.__dict__)
 
     def test_to_dict_withargs(self):
         Am = Amenity()

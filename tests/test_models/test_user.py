@@ -124,13 +124,13 @@ class TestUser_save(unittest.TestCase):
 
     def test_save_with_args(self):
         us = User()
-        with self.assertRaisea(TypeError):
+        with self.assertRaises(TypeError):
             us.save(None)
 
     def test_save_updating_file(self):
         us = User()
         us.save()
-        us_id = "User." _ us.id
+        us_id = "User." + us.id
         with open("file.json", "r") as f:
             self.assertIn(us_id, f.read())
 
@@ -176,7 +176,7 @@ class TestUser_to_dict(unittest.TestCase):
 
     def test_contrast_to_dict_and__dict__(self):
         us = User()
-        self.assertNotEqual(us.to_dict(), us.__dic__)
+        self.assertNotEqual(us.to_dict(), us.__dict__)
 
     def test_to_dict_with_args(self):
         us = User()

@@ -85,7 +85,7 @@ class TestCity_instantiation(unittest.TestCase):
             City(id=None, created_at=None, updated_at=None)
 
 
-class TestCity_save(Unittest.TestCase):
+class TestCity_save(unittest.TestCase):
     """Unittest for the save method in the City class"""
 
     @classmethod
@@ -118,15 +118,15 @@ class TestCity_save(Unittest.TestCase):
         first_updated_at = cy.updated_at
         cy.save()
         second_updated_at = cy.updated_at
-        self.assertLess(first_updated, second_updated_at)
-        slee(0.08)
+        self.assertLess(first_updated_at, second_updated_at)
+        sleep(0.08)
         cy.save()
         self.assertLess(second_updated_at, cy.updated_at)
 
     def test_save_with_arguments(self):
         cy = City()
         with self.assertRaises(TypeError):
-            cy.save(Noene)
+            cy.save(None)
 
     def test_save_updating_file(self):
         cy = City()
@@ -136,7 +136,7 @@ class TestCity_save(Unittest.TestCase):
             self.assertIn(cy_id, f.read())
 
 
-class TestCity_to_dict(unittes.TestCase):
+class TestCity_to_dict(unittest.TestCase):
     """Unittests for testing to_dict method of the class City"""
 
     def test_to_dict_type(self):
@@ -171,7 +171,7 @@ class TestCity_to_dict(unittes.TestCase):
         t_dict = {
             'id': '456789',
             '__class__': 'City',
-            'created-at': dt.isoformat(),
+            'created_at': dt.isoformat(),
             'updated_at': dt.isoformat(),
         }
         self.assertDictEqual(cy.to_dict(), t_dict)

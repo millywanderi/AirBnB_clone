@@ -27,7 +27,7 @@ class TestReviewDocs(unittest.TestCase):
     def test_pep8_confirmation_on_review(self):
         """Test that modesl/review.py conforms to pep8"""
         pep8to = pep8.StyleGuide(quiet=True)
-        result = pep8to.check_files(["models/review.p"])
+        result = pep8to.check_files(["models/review.py"])
         self.assertEqual(result.total_errors, 0,
                          "Found code style errors (and warnings).")
 
@@ -86,7 +86,7 @@ class TestReview(unittest.TestCase):
         rv = Review()
         new_dict = rv.to_dict()
         self.assertEqual(type(new_dict), dict)
-        for att in r.__dict__:
+        for attr in rv.__dict__:
             self.assertTrue(attr in new_dict)
             self.assertTrue("__class__" in new_dict)
 
@@ -94,12 +94,12 @@ class TestReview(unittest.TestCase):
         """Test if the values from the to_dict are correct"""
         t_format = "%Y-%m-%dT%H:%M:%S.%f"
         rv = Review()
-        new_d = r.to_dict()
+        new_d = rv.to_dict()
         self.assertEqual(new_d["__class__"], "Review")
         self.assertEqual(type(new_d["created_at"]), str)
         self.assertEqual(type(new_d["updated_at"]), str)
-        self.assertEqual(new_d["created_at"], r.created_at.strftime(t_format))
-        self.assertEqual(new_d["updated_at"], r.updated_at.strftime(t_format))
+        self.assertEqual(new_d["created_at"], rv.created_at.strftime(t_format))
+        self.assertEqual(new_d["updated_at"], rv.updated_at.strftime(t_format))
 
     def test_str(self):
         """Tests that the string method works properly"""

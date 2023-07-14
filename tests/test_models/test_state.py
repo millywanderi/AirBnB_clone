@@ -55,9 +55,9 @@ class TestState_instantiation(unittest.TestCase):
     def test_str_repr(self):
         dt = datetime.now()
         dt_repr = repr(dt)
-        st = Sate()
+        st = State()
         st.id = "456789"
-        st_created_at = st.updated_at = dt
+        st.created_at = st.updated_at = dt
         st_str = st.__str__()
         self.assertIn("[State] (456789)", st_str)
         self.assertIn("'id': '456789'", st_str)
@@ -69,7 +69,7 @@ class TestState_instantiation(unittest.TestCase):
         self.assertNotIn(None, st.__dict__.values())
 
     def test_instantiation_with_kwargs(self):
-        dt datetime.now()
+        dt = datetime.now()
         dt_iso = dt.isoformat()
         st = State(id="456", created_at=dt_iso, updated_at=dt_iso)
         self.assertEqual(st.id, "456")
@@ -106,7 +106,7 @@ class TestState_save(unittest.TestCase):
         sleep(0.08)
         first_updated_at = st.updated_at
         st.save()
-        self.assertLess(first_updated_at, st.updated)
+        self.assertLess(first_updated_at, st.updated_at)
 
     def test_save_twice(self):
         st = State()
@@ -128,7 +128,7 @@ class TestState_save(unittest.TestCase):
         st = State()
         st.save()
         st_id = "State." + st.id
-        with ope("file.json", "r") as f:
+        with open("file.json", "r") as f:
             self.assertIn(st_id, f.read())
 
 
@@ -140,7 +140,7 @@ class TestState_to_dict(unittest.TestCase):
 
     def test_to_dict_containing_correct_keys(self):
         st = State()
-        self.assertIn("id", st.to_id())
+        self.assertIn("id", st.to_dict())
         self.assertIn("created_at", st.to_dict())
         self.assertIn("updated_at", st.to_dict())
         self.assertIn("__class__", st.to_dict())
@@ -156,13 +156,13 @@ class TestState_to_dict(unittest.TestCase):
         st = State()
         st_dict = st.to_dict()
         self.assertEqual(str, type(st_dict["id"]))
-        self.assertEqual(str, type(st_dicrt["created_at"]))
+        self.assertEqual(str, type(st_dict["created_at"]))
         self.assertEqual(str, type(st_dict["updated_at"]))
 
     def test_oputput_of_the_to_dict(self):
-        dt = datetime(now)
+        dt = datetime.now()
         st = State()
-        st.id = "4567889"
+        st.id = "456789"
         st.created_at = st.updated_at = dt
         t_dict = {
             'id': '456789',
@@ -174,7 +174,7 @@ class TestState_to_dict(unittest.TestCase):
 
     def test_contrast_to_dict_and__dict__(self):
         st = State()
-        self.assertNotEqual(st.to_dict(), st-__dict__)
+        self.assertNotEqual(st.to_dict(), st.__dict__)
 
     def test_to_dict_with_arg(self):
         st = State()

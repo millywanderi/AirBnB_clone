@@ -5,7 +5,7 @@ import models
 import unittest
 from datetime import datetime
 from time import sleep
-from from models.base_model import BaseModel
+from models.base_model import BaseModel
 
 
 class TestBaseModel_instantiating(unittest.TestCase):
@@ -17,7 +17,7 @@ class TestBaseModel_instantiating(unittest.TestCase):
     def test_new_instance_stored_in__objects(self):
         self.assertIn(BaseModel(), models.storage.all().values())
 
-    def test_if_id_is_publicstr(sel):
+    def test_if_id_is_publicstr(self):
         self.assertEqual(str, type(BaseModel().id))
 
     def test_if_created_at_ispublicdatetime(self):
@@ -61,7 +61,7 @@ class TestBaseModel_instantiating(unittest.TestCase):
 
     def test_instantiating_with_kwargs(self):
         d_t = datetime.now()
-        d_t_iso = isoformat()
+        d_t_iso = d_t.isoformat()
         bm = BaseModel(id="456", created_at=d_t_iso, updated_at=d_t_iso)
         self.assertEqual(bm.id, "456")
         self.assertEqual(bm.created_at, d_t)
@@ -73,7 +73,7 @@ class TestBaseModel_instantiating(unittest.TestCase):
 
     def test_instantiation_with_args_and_kwargs(self):
         dt = datetime.now()
-        dt = dt.isoformat()
+        dt_iso = dt.isoformat()
         bm = BaseModel("8", id="456", created_at=dt_iso, updated_at=dt_iso)
         self.assertEqual(bm.id, "456")
         self.assertEqual(bm.created_at, dt)
@@ -106,12 +106,12 @@ class TestBaseModel_save(unittest.TestCase):
         sleep(0.08)
         first_updated_at = bm.updated_at
         bm.save()
-        self.asserLess(first_updated_at, bm.updated_at)
+        self.assertLess(first_updated_at, bm.updated_at)
 
     def test_2_saves(self):
         bm = BaseModel()
         sleep(0.08)
-        first_updated-at = bm.updated_at
+        first_updated_at = bm.updated_at
         bm.save()
         second_updated_at = bm.updated_at
         bm.save()
@@ -144,7 +144,7 @@ class TestBaseModel_to_dict(unittest.TestCase):
         self.assertIn("id", bm.to_dict())
         self.assertIn("created_at", bm.to_dict())
         self.assertIn("updated_at", bm.to_dict())
-        self.assertIn("__class__name", bm.to_dict())
+        self.assertIn("__class__", bm.to_dict())
 
     def test_to_dict_containing_added_attributes(self):
         bm = BaseModel()
@@ -166,7 +166,7 @@ class TestBaseModel_to_dict(unittest.TestCase):
         bm.created_at = bm.updated_at = d_t
         t_dict = {
             'id': '456789',
-            '__class__': 'BaseModel'
+            '__class__': 'BaseModel',
             'created_at': d_t.isoformat(),
             'updated_at': d_t.isoformat()
         }
