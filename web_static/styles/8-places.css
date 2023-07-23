@@ -55,6 +55,39 @@
 	height: 70px;
 }
 
+.icon_group {
+	display: inline-block;
+	background-image: url("../images/icon_group.png");
+	background-repeat: no-repeat;
+	background-position: center;
+	width: 60px;
+	height: 60px;
+}
+
+.icon_bed {
+	display: inline-block;
+	background-image: url("../images/icon_bed.png");
+	background-repeat: no-repeat;
+	background-position: center;
+	width: 60px;
+	height: 60px;
+}
+
+.icon_bath {
+	display: inline-block;
+	background-image: url("../images/icon_bath.png");
+	background-repeat: no-repeat;
+	background-position: center;
+	width: 60px;
+	height: 60px;
+}
+
+
+
+
+
+
+
 
 
 
