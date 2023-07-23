@@ -44,6 +44,8 @@
 	height: 60px;
 	font-size: 30px;
 	right: 0px;
+	line-height: 60px;
+	padding: 5px;
 }
 
 .headline {
