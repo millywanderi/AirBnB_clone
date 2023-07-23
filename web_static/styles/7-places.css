@@ -94,9 +94,8 @@ button:hover {
 }
 
 .places {
-	font-size: 30px;
-	display: flex;
-	align-items: left;
+	text-align: center;
+	margin: 0;
 }
 .article {
 	width: 390;
@@ -105,16 +104,20 @@ button:hover {
 	border-color: #FF5A5F;
 	border-width: 1px;
 	border-radius: 4px;
+	display: inline-block;
+	position: relative;
 }
 
-.article h2 {
+.places h2 {
 	font-size: 30px;
-	display: flex;
-	justify-content: center;
-	align-items: center;
+	text-align: center;
 }
 .places h1 {
 	font-size: 30px;
+	vertical-align: top;
+	text-align: left;
+	padding: 25px 0 0 30px;
+	margin: 0;
 }
 
 .container {
