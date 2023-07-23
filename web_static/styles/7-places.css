@@ -94,28 +94,28 @@ button:hover {
 }
 
 .places {
-	text-align: center;
-	margin: 0;
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: space-around;
 }
-.article {
-	width: 390;
+.places article {
+	width: 390px;
 	padding: 20px;
 	margin: 20px;
-	border-color: #FF5A5F;
-	border-width: 1px;
+	border: #FF5A5F solid 1px;
 	border-radius: 4px;
-	display: inline-block;
-	position: relative;
 }
 
-.places h2 {
+.places article h2 {
 	font-size: 30px;
 	text-align: center;
+	margin-top: 0.17em;
 }
 .places h1 {
 	font-size: 30px;
-	vertical-align: top;
 	text-align: left;
-	padding: 25px 0 0 30px;
-	margin: 0;
+	display: block;
+	flex-grow: 2;
+	width: 100%;
+	margin-left: 1em;
 }
