@@ -82,8 +82,17 @@
 	height: 60px;
 }
 
+.max_guest, .number_rooms, .number_bathrooms {
+	display: inline-block;
+	width: 100px;
+	text-align: center;
+	margin: 0px auto;
+}
 
-
+.user {
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
 
 
 
