@@ -66,6 +66,7 @@
 
 .headline {
 	display: flex;
+	flex-direction: row;
 	position: relative;
 	width: 100%;
 	height: 80px;
@@ -92,9 +93,36 @@
 	margin-left: 2.5em;
 }
 
+.icon_group {
+	display: inline-block;
+	background-image: url("../images/icon_group.png");
+	background-repeat: no-repeat;
+	background-position: center;
+	width: 50px;
+	height: 50px;
+}
+
+.icon_bed {
+	display: inline-block;
+	background-image: url("../images/icon_bed.png");
+	background-repeat: no-repeat;
+	background-position: center;
+	width: 50px;
+	height: 50px;
+}
+
+.icon_bath {
+	display: inline-block;
+	background-image: url("../images/icon_bath.png");
+	background-repeat: no-repeat;
+	background-position: center;
+	width: 50px;
+	height: 50px;
+}
+
 .places article .user {
 	margin-top: 1em;
-	flex: 1 0 100%;
+	flex: 1 0 0;
 }
 
 .places article .description p {
