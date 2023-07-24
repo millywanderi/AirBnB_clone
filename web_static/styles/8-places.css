@@ -45,11 +45,10 @@
 	min-width: 60px;
 	height: 60px;
 	font-size: 30px;
-	right: 5%;
-	top: 5%;
+	right: 20px;
+	top: 20px;
 	line-height: 60px;
-	padding: 5px;
-	align-items: center;
+	text-align: center;
 }
 
 .places article .price-by-night p {
@@ -123,8 +122,8 @@
 }
 
 .places article .user {
-	text-align: initial;
-	padding: 10px 0;
+	display: flex;
+	padding-top: 20px;
 }
 
 .places article .description p {
