@@ -37,7 +37,6 @@
 .places article .price-by-night {
 	display: flex;
 	position: absolute;
-	justify-content: center;
 	align-self: flex-end;
 	float: right;
 
