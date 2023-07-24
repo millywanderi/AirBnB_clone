@@ -76,7 +76,7 @@
 
 .number_rooms {
 	background: url("../images/icon_bed.png") no-repeat;
-	margin-top: 0.4em;
+	margin-top: 0.5em;
 	width: 100px;
 	margin-left: 2.5em;
 }
@@ -102,8 +102,8 @@
 	background-image: url("../images/icon_bed.png");
 	background-repeat: no-repeat;
 	background-position: center;
-	width: 50px;
-	height: 50px;
+	width: 100px;
+	margin: 0px auto;
 }
 
 .icon_bath {
@@ -111,8 +111,8 @@
 	background-image: url("../images/icon_bath.png");
 	background-repeat: no-repeat;
 	background-position: center;
-	width: 50px;
-	height: 50px;
+	width: 100%;
+	margin: 0px auto;
 }
 
 .user {
