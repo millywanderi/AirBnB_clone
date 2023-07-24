@@ -57,8 +57,7 @@
 	height: 80px;
 	border-top: 1px solid #DDDDDD;
 	border-bottom: 1px solid #DDDDDD;
-	flex: 1 0 100%;
-	justify-content: space-around;
+}
 
 .headline {
 	display: flex;
