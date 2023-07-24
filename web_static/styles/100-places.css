@@ -162,7 +162,9 @@
 	height: 50px;
 }
 
-
+.amenities-list {
+	list-style: none;
+}
 
 
 
