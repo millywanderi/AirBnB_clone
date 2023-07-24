@@ -51,11 +51,11 @@
 	padding: 5px;
 }
 
-.places article .price-by-night p {
-	margin: 0 auto;
-	padding-top: 0.4em;
-	padding-left: 0.2em;
-}
+/*.places article .price-by-night p {*/
+	/*margin: 0 auto;*/
+	/*padding-top: 0.4em;*/
+	/*padding-left: 0.2em;*/
+/*}*/
 
 .places article .information {
 	display: flex;
