@@ -121,7 +121,7 @@
 	background-size: cover;
 	width: 20px;
 	height: 20px;
-	margin-right: 10px
+	margin-right: 10px;
 }
 
 .icon_wifi {
@@ -130,7 +130,7 @@
 	background-size: cover;
 	width: 20px;
 	height: 20px;
-	margin-left: 10px
+	margin-right: 10px;
 }
 
 .icon_pets{
@@ -138,7 +138,7 @@
 	background-image: url("../images/icon_pets.png");
 	width: 20px;
 	height: 20px;
-	margin-left: 10px;
+	margin-right: 10px;
 }
 
 .user {
@@ -174,9 +174,9 @@ article .amenities {
 	padding-bottom: 10px;
 }
 
-article .reviews p {
+.reviews p {
 	font-size: 12px;
-	margin: 0;
+	margin: 0px;
 }
 
 article li {
