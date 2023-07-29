@@ -164,6 +164,10 @@ article li {
 	width:100%:
 }
 
+.amenities_list {
+	margin: 0px;
+}
+
 article ul {
 	text-align: left;
 	margin-top: 20px;
