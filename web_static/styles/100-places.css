@@ -1,27 +1,17 @@
 .places {
-	display: flex;
-	justify-content: center;
-	flex-wrap: wrap;
+	display: block;
 	text-align: center;
 	margin: 45px auto;
 }
 
-article {
-	display: flex;
+.places article {
+	display: inline-block;
 	width: 390px;
-	flex: none;
-	flex-wrap: wrap;
-	flex-direction: row;
-	align-content: flex-start;
-
-	padding-top: 10px;
-	padding-right: 20px;
-	padding-left: 20px;
-	padding-bottom: 40px;
 	margin: 20px;
-
-	border: 1px solid #FF5A5F;
+	padding: 20px;
+	border: #FF5A5F solid 1px;
 	border-radius: 4px;
+	text-align: center;
 }
 
 .places article h2 {
@@ -138,80 +128,3 @@ article {
 	margin-top: 0;
 	text-align: left;
 }
-
-article .amenities {
-	margin-top: 40px;
-}
-
-.amenities h2 {
-	font-size: 16px;
-	border-bottom: 1px solid #DDDDDD
-}
-
-.icon_tv {
-	display: inline-block;
-	list-style: none;
-	background-image: url("../images/icon_tv.png");
-	background-repeat: no-repeat;
-	width: 20px;
-	background-size: cover;
-	height: 20px;
-	margin-right: 10px;
-}
-
-.icon_wifi {
-	display: inline-block;
-	list-style: none;
-	background-image: url("../images/icon_wifi.png");
-	background-repeat: no-repeat;
-	background-size: cover;
-	width: 20px;
-	height: 20px;
-	margin-right: 10px;
-}
-
-.icon_pets {
-	display: inline-block;
-	background-image: url("../images/icon_pets.png");
-	background-repeat: no-repeat;
-	background-size: cover;
-	width: 20px;
-	height: 20px;
-	margin-right: 10px;
-}
-
-.amenities-list {
-	display: inline-block;
-	list-style: none;
-}
-
-article ul {
-	text-align: left;
-	margin-top: 20px;
-	margin-bottom: 0px;
-	padding-bottom: 0px;
-}
-
-article li {
-	display: flex;
-	flex-direction: row;
-	justify-content: flex-start;
-	align-content: flex-start;
-	margin-bottom: 10px;
-}
-
-.reviews {
-	margin-top: 40px;
-	width: 100%;
-}
-
-
-
-
-
-
-
-
-
-
-
