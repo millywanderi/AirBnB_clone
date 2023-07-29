@@ -124,6 +124,23 @@
 	margin-right: 10px
 }
 
+.icon_wifi {
+	display: inline-block;
+	background-image: url("../images/icon_wifi.png");
+	background-size: cover;
+	width: 20px;
+	height: 20px;
+	margin-left: 10px
+}
+
+.icon_pets{
+	display: inline-block;
+	background-image: url("../images/icon_pets.png");
+	width: 20px;
+	height: 20px;
+	margin-left: 10px;
+}
+
 .user {
 	text-align: left;
 	margin-left: 0;
